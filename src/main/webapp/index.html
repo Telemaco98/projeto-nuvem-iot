@@ -3,14 +3,35 @@
   <head>
     <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
     <title>Hello App Engine</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="1003569852186-35a9jsgc1punp5fr8ih2aps9odikn977.apps.googleusercontent.com">
+    <script type="text/javascript">
+    	function onSignIn(googleUser) {
+    	  var profile = googleUser.getBasicProfile();
+    	  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    	  console.log('Name: ' + profile.getName());
+    	  console.log('Image URL: ' + profile.getImageUrl());
+    	  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    	}
+    	
+   	  	function signOut() {
+   		    var auth2 = gapi.auth2.getAuthInstance();
+   		    auth2.signOut().then(function () {
+   		      console.log('User signed out.');
+   		    });
+   		}
+    </script>
   </head>
 
   <body>
     <h1>Hello App Engine!</h1>
-
+	
+	<div class="g-signin2" data-onsuccess="onSignIn"></div>
+	
+	<a href="#" onclick="signOut()">Sign out</a>
     <table>
       <tr>
-        <td colspan="2" style="font-weight:bold;">Available Servlets:</td>        
+        <td colspan="2" style="font-weight:bold;">Available Servlets:</td>
       </tr>
       <tr>
         <td><a href='/hello'>The servlet</a></td>
