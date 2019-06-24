@@ -9,8 +9,6 @@
 	
 	if (user == null) {
 		response.sendRedirect("index.jsp");
-	} else  {
-		System.out.println(user.getNickname());
 	}
 %>
 <!DOCTYPE html>
@@ -19,9 +17,13 @@
 <title></title>
 </head>
 <body>
-	<h1>
-		Hi <%=user.getNickname() %> How are you?
-	</h1>
-	<a href= "<%= us.createLogoutURL("index.jsp") %>">Logout </a>
+	<h1> Hi <%=user.getNickname() %> </h1>
+	<h2> ID: <%=user.getUserId() %> </h2>
+	<a href= "<%= us.createLogoutURL("index.jsp") %>"> Logout </a> <br/>
+	
+	<form action="barrels" method="GET">
+		<button type="submit"> Ver todos os barris </button>
+	</form>
+	
 </body>
 </html>
