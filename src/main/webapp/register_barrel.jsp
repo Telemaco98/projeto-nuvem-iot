@@ -13,8 +13,6 @@
 %>
 <!DOCTYPE html>
 <html>
-<head>
-<title></title>
 </head>
 <body>
 	<h1> Por favor, <%=user.getNickname() %>, insira os dados do barril a ser registrado abaixo. </h1>
