@@ -13,4 +13,21 @@
 %>
 <!DOCTYPE html>
 <html>
+</head>
+<body>
+	<h1> Por favor, <%=user.getNickname() %>, insira os dados do barril a ser registrado abaixo. </h1>
+	
+	
+	<form>
+  		Nome do Barril:<br>
+  		<input type="text" name="barrel_name"><br>
+  		Data de Envasamento (deixar vazio para registrar como hoje):<br>
+  		<input type="date" value="<?php echo date("Y-m-d");?>" name="barrel_birthday">
+  		Tipo de Uva:<br>
+  		<input type="text" name="barrel_grape"><br>
+	</form>
+	
+	
+	
+</body>
 </html>
