@@ -29,8 +29,8 @@
 		<button type="submit"> Ver sensores de barril </button>
 		<button type=""> Ver sensores de barril </button>
 	</form>
-	<a href="<%= us.createLogoutURL("register_barrel.jsp") %>">Registrar barril</a>
-	<a href="<%= us.createLogoutURL("register_sensor.jsp") %>">Registrar sensor</a>
+	<a href="./register_barrel.jsp>">Registrar barril</a>
+	<a href="./register_sensor.jsp>">Registrar sensor</a>
 	
 	
 </body>
