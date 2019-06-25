@@ -25,8 +25,8 @@ public class Barrels extends HttpServlet {
 		User user = us.getCurrentUser();
 		if (user == null) resp.sendRedirect("index.jsp");
 		
-//		URL url = new URL("http://10.7.40.62:1026/v2/entities?type=" + user.getUserId());
-//		URL url = new URL("http://10.7.40.62:1026/v2/entities?type=sensor_temperatura_shirley");
+//		URL url = new URL("http://localhost:1026/v2/entities?type=" + user.getUserId());
+//		URL url = new URL("http://localhost:1026/v2/entities?type=sensor_temperatura_shirley");
 		URL url = new URL("http://www.omdbapi.com/?apikey=7a8ad7b1&s=game");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
 		StringBuffer json = new StringBuffer();
