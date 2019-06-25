@@ -6,7 +6,7 @@
 	response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 	UserService us = UserServiceFactory.getUserService();
 	User user = us.getCurrentUser();
-
+	
 	if (user == null) {
 		response.sendRedirect("index.jsp");
 	}
@@ -14,21 +14,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Cadastro do Sensor</title>
+<title></title>
 </head>
 <body>
-	<h1>
-		Por favor, <%=user.getNickname()%>, insira os dados do barril a ser registrado
-		abaixo.
-	</h1>
-	<form>
-		<!-- TODO pegar dos Barris exitentes -->
-		<!-- Selecione Barril<br>
-		<select>
-			<option> </option>
-		</select> -->
-		
-		<input value="">
+	<h1>Cadastro de Barril</h1>
+	<h4> Por favor, insira os dados do barril a ser registrado abaixo. </h4>
+
+	<form name="registerBarrel" action="RegisterBarrel" method="POST">
+  		Nome do Barril<br>
+  		<input type="text" name="barrel_name" required><br/>
+  		
+  		Data de Envasamento<br>
+  		<input type="date" name="barrel_birthday" value="<?php echo date(Y-m-d) ?>" required> <br/>
+  		
+  		Tipo de Uva<br>
+  		<input type="text" name="barrel_grape" required><br/> <br/>
+  		
+  		<button type="submit">Confirmar</button>
 	</form>
 </body>
 </html>

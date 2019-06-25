@@ -16,4 +16,22 @@
 		<servlet-name>Barrels</servlet-name>
 		<url-pattern>/barrels</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>RegisterSensor</servlet-name>
+		<servlet-class>br.ufrn.imd.winecloud.presentation.RegisterSensor</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterSensor</servlet-name>
+		<url-pattern>/registerSensor</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>RegisterBarrel</servlet-name>
+		<servlet-class>br.ufrn.imd.winecloud.presentation.RegisterBarrel</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterBarrel</servlet-name>
+		<url-pattern>/RegisterBarrel</url-pattern>
+	</servlet-mapping>
 </web-app>

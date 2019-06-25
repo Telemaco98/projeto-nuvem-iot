@@ -1,6 +1,7 @@
 package br.ufrn.imd.winecloud.entity;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -12,24 +13,21 @@ import java.util.List;
  */
 public class Barrel {
 	private String id;
+	private Date dob;
+	private String grapeType;
 	private List<Sensor> sensors;
 
 	/**
-	 * Default constructor
+	 * Convenience constructor
 	 * @param id
+	 * @param dob
+	 * @param grapeType
 	 */
-	public Barrel(String id) {
-		this.id = id;
-		this.sensors = new ArrayList<Sensor>();
-	}
-	
-	/**
-	 * Default constructor
-	 * @param id
-	 */
-	public Barrel(String id, List<Sensor> sensors) {
-		this.id = id;
-		this.sensors = sensors;
+	public Barrel(String id, Date dob, String grapeType) {
+		this.id 		= id;
+		this.dob 		= dob;
+		this.grapeType 	= grapeType;
+		this.sensors 	= new ArrayList<Sensor>();
 	}
 	
 	/**
@@ -38,6 +36,22 @@ public class Barrel {
 	 */
 	public String getId() {
 		return id;
+	}
+	
+	/**
+	 * Returns the day of birth
+	 * @return dob
+	 */
+	public Date getDob() {
+		return dob;
+	}
+	
+	/**
+	 * Returns the grape type
+	 * @return grapeType
+	 */
+	public String getGrapeType() {
+		return grapeType;
 	}
 	
 	/**
@@ -54,5 +68,16 @@ public class Barrel {
 	 */
 	public void setSensors(List<Sensor> sensors) {
 		this.sensors = sensors;
+	}
+	
+	/**
+	 * Converts a barrel to String type
+	 */
+	@Override
+	public String toString() {
+		return "[ id: "+ this.id + 
+				", dob: " + this.dob + 
+				", grape type: " + this.grapeType +
+				" ]";
 	}
 }
