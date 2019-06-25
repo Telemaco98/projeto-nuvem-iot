@@ -15,6 +15,8 @@ import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
 
+import br.ufrn.imd.winecloud.business.ConnectionUtils;
+
 public class Barrels extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -26,10 +28,9 @@ public class Barrels extends HttpServlet {
 		UserService us = UserServiceFactory.getUserService();
 		User user = us.getCurrentUser();
 		if (user == null) resp.sendRedirect("index.jsp");
-		
-//		URL url = new URL("http://localhost:1026/v2/entities?type=" + user.getUserId());
-//		URL url = new URL("http://localhost:1026/v2/entities?type=sensor_temperatura_shirley");
-		URL url = new URL("http://www.omdbapi.com/?apikey=7a8ad7b1&s=game");
+
+//		URL url = new URL("http://www.omdbapi.com/?apikey=7a8ad7b1&s=game");		
+		URL url = new URL("http://"+ ConnectionUtils.IP + ":"+ ConnectionUtils.PORT_ORION +"/v2/entities?type=" + user.getUserId() + "_barrel");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
 		StringBuffer json = new StringBuffer();
 		String line;

@@ -35,8 +35,7 @@ public class BarrelServices {
 	public void registerBarrel() throws IOException {
 		System.out.println(barrel.toString());
 
-		String url_str 	= "http://" + ConnectionUtils.IP + ":" + ConnectionUtils.PORT_ORION +  
-				"/v1/contextEntities";
+		String url_str 	= "http://" + ConnectionUtils.IP + ":" + ConnectionUtils.PORT_ORION + "/v1/contextEntities";
 		String json 	= 
 			"{ " +
 					"\"type\": \"" + user.getUserId() + "_" + "barrel\", " +
